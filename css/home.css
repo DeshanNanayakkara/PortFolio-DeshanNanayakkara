@@ -1,0 +1,58 @@
+.home {
+    height: 100vh;
+    width: 100vw;
+    background-color: aqua;
+    display: grid;
+    grid-template-columns: 30vw 70vw;
+}
+
+.image-box {
+    background-color: aquamarine;
+}
+.home-content {
+    place-content: center;
+    padding-top: 10vh;
+    margin-left: 100px;
+    display: grid;
+    grid-template-columns: auto 50px;
+}
+
+.image1 {
+    height: 100%;
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .home {
+        grid-template-columns: 40vw 60vw; /* Adjust column widths for tablets */
+    }
+    .home-content {
+        margin-left: 50px; /* Reduce margin for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .home {
+        grid-template-columns: 1fr; /* Stack the sections vertically */
+    }
+    .home-content {
+        margin-left: 0;
+        text-align: center; /* Center-align content for smaller screens */
+    }
+    .image-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .image1 {
+        width: 80%; /* Scale down the image for better fit */
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .image1 {
+        width: 100%; /* Use full width for very small screens */
+    }
+}

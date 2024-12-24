@@ -1,17 +1,3 @@
-/*
-0 - 600px:      Phone
-600 - 900px:    Tablet portrait
-900 - 1200px:   Tablet landscape
-[1200 - 1800] is where our normal styles apply
-1800px + :      Big desktop
-$breakpoint arguement choices:
-- phone
-- tab-port
-- tab-land
-- big-desktop
-
-Inside media queries 1em is always 16px i.e 1em = 16px at every screen size only inside media queries
-*/
 *,
 *::after,
 *::before {
@@ -63,7 +49,7 @@ textarea {
   resize: none; }
 
 .heading-primary {
-  font-size: 6rem;
+  font-size: 5rem;
   text-transform: uppercase;
   letter-spacing: 3px;
   text-align: center; }
@@ -85,7 +71,7 @@ textarea {
 
 .heading-sec__main {
   display: block;
-  font-size: 4rem;
+  /* font-size: 4rem; */
   text-transform: uppercase;
   letter-spacing: 1px;
   letter-spacing: 3px;
@@ -93,7 +79,7 @@ textarea {
   margin-bottom: 3.5rem;
   position: relative; }
   .heading-sec__main--lt {
-    color: #fff; }
+    color: #000000; }
     .heading-sec__main--lt::after {
       content: '';
       background: #fff !important; }
@@ -103,7 +89,7 @@ textarea {
     top: calc(100% + 1.5rem);
     height: 5px;
     width: 3rem;
-    background: #0062b9;
+    background: #000000;
     left: 50%;
     transform: translateX(-50%);
     border-radius: 5px; }
@@ -124,7 +110,7 @@ textarea {
     .heading-sec__sub {
       font-size: 1.8rem; } }
   .heading-sec__sub--lt {
-    color: #eee; }
+    color: #000000; }
 
 .heading-sm {
   font-size: 2.2rem;
@@ -137,8 +123,8 @@ textarea {
   width: 92%; }
 
 .btn {
-  background: #fff;
-  color: #333;
+  background: #000000;
+  color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 2px;
   display: inline-block;
@@ -155,12 +141,12 @@ textarea {
     padding: 1.5rem 5rem;
     font-size: 1.6rem; }
   .btn--theme {
-    background: #0062b9;
+    background: #000000;
     color: #fff; }
   .btn--theme-inv {
-    color: #0062b9;
+    color: #000000;
     background: #fff;
-    border: 2px solid #0062b9;
+    border: 2px solid #000000;
     box-shadow: none;
     padding: calc(1.5rem - 2px) calc(5rem - 2px); }
 
@@ -183,71 +169,9 @@ textarea {
 .d-none {
   display: none; }
 
-.home-hero {
-  color: #fff;
-  background: linear-gradient(to right, rgba(0, 98, 185, 0.8), rgba(0, 98, 185, 0.8)), url(../../assets/svg/common-bg.svg);
-  background-position: center;
-  height: 100vh;
-  min-height: 80rem;
-  max-height: 120rem;
-  position: relative; }
-  @media only screen and (max-width: 37.5em) {
-    .home-hero {
-      height: unset;
-      min-height: unset; } }
-  .home-hero__socials {
-    position: absolute;
-    top: 50%;
-    border: 2px solid #eee;
-    border-left: 2px solid #eee;
-    transform: translateY(-50%); }
-    @media only screen and (max-width: 56.25em) {
-      .home-hero__socials {
-        display: none; } }
-  .home-hero__mouse-scroll-cont {
-    position: absolute;
-    bottom: 3%;
-    left: 50%;
-    transform: translateX(-50%); }
-    @media only screen and (max-width: 37.5em) {
-      .home-hero__mouse-scroll-cont {
-        display: none; } }
-  .home-hero__social {
-    width: 5rem; }
-  .home-hero__social-icon-link {
-    width: 100%;
-    display: block;
-    padding: 1.2rem;
-    border-bottom: 2px solid #eee;
-    transition: background .3s; }
-    .home-hero__social-icon-link:hover {
-      background: rgba(255, 255, 255, 0.1); }
-    .home-hero__social-icon-link--bd-none {
-      border-bottom: 0; }
-  .home-hero__social-icon {
-    width: 100%; }
-  .home-hero__content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 90rem;
-    width: 92%; }
-    @media only screen and (max-width: 37.5em) {
-      .home-hero__content {
-        padding: 19rem 0 13rem 0;
-        margin: auto;
-        position: static;
-        transform: translate(0, 0); } }
-  .home-hero__info {
-    margin: 3rem auto 0 auto;
-    max-width: 80rem; }
-  .home-hero__cta {
-    margin-top: 5rem;
-    text-align: center; }
 
 .about {
-  background: #fafafa; }
+  background: #e1e1e1; }
   .about__content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -323,7 +247,7 @@ textarea {
           font-size: 1.7rem; } }
 
 .contact {
-  background: linear-gradient(to right, rgba(0, 98, 185, 0.8), rgba(0, 98, 185, 0.8)), url(../../assets/svg/common-bg.svg);
+  background: linear-gradient(to right, rgba(0, 98, 185, 0.8), rgba(0, 98, 185, 0.8)), url();
   background-size: cover;
   background-position: center; }
   .contact__form-container {
@@ -572,6 +496,7 @@ textarea {
     width: 100%; }
   .header__sm-menu {
     background: #fff;
+    height: 10vh;
     position: absolute;
     width: 100%;
     top: 100%;
