@@ -1,13 +1,74 @@
+
+ .social-text{
+    text-decoration: none;
+    color: white;
+    font-size: large;
+
+ }
+  .social {
+    position: absolute;
+    bottom: 0; /* Align to the bottom of the parent container */
+    left: 0; /* Optional: Align to the left edge of the parent */
+    right: 0;
+  }
+  .social ul {
+    margin-left: 15px;
+    padding: 10px;
+    transform: translate(-270px, 0);
+  }
+  .social ul li {
+    display: block;
+    margin: 5px;
+    background: rgba(0, 0, 0, 0.36);
+    width: 300px;
+    text-align: right;
+    padding: 10px;
+    border-radius: 0 30px 30px 0;
+    transition: all 1s;
+  }
+  .social ul li:hover {
+    transform: translate(110px, 0);
+    background: rgba(255, 255, 255, 0.4);
+  }
+  .social ul li:hover a {
+    color: #000;
+  }
+  .social ul li:hover i {
+    color: #fff;
+    background: rgba(0, 0, 0, 0.36);
+    transform: rotate(360deg);
+    transition: all 1s;
+  }
+  .social ul li i {
+    margin-left: 10px;
+    color: #000;
+    background: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    background: #ffffff;
+    transform: rotate(0deg);
+  }
+  
+  
 .home {
     height: 100vh;
     width: 100vw;
-    background-color: aqua;
+    background-color: rgb(255, 255, 255);
     display: grid;
     grid-template-columns: 30vw 70vw;
 }
 
 .image-box {
-    background-color: aquamarine;
+    background: 
+        linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), 
+        url('/assets/jpeg/IMG_20240312_210506_837-02[1].jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
 }
 .home-content {
     place-content: center;
@@ -54,5 +115,265 @@
 @media (max-width: 480px) {
     .image1 {
         width: 100%; /* Use full width for very small screens */
+    }
+}
+
+
+.hero-container {
+    /* min-height: 100vh; */
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    background: #ffffff;
+    color: #000000;
+    overflow: hidden;
+}
+
+.text-content {
+    /* max-width: 800px; */
+    margin: 0 auto;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.welcome {
+    font-size: 1.2rem;
+    color: #000000;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 0.8s ease-out 0.2s forwards;
+}
+
+.role-container {
+    margin: 2rem 0;
+}
+
+.intro {
+    font-size: 2.5rem;
+    margin-right: 1rem;
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out 0.4s forwards;
+}
+
+.name {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #000000;
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out 0.6s forwards;
+    border-right: 3px solid #001a14;
+    padding-right: 8px;
+}
+
+/* From Uiverse.io by JkHuger */ 
+.container {
+    width: 307px;
+    height: 50px;
+  }
+  
+  .content {
+    display: block;
+    position: sticky;
+    overflow: hidden;
+    font-family: 'Lato', sans-serif;
+    font-size: 35px;
+    line-height: 40px;
+    color: #ecf0f1;
+  }
+  
+  .content__container {
+    font-weight: 600;
+    overflow: hidden;
+    height: 40px;
+    padding: 0 40px;
+  }
+  
+  .content__container:before {
+    content: '[';
+    left: 0;
+  }
+  
+  .content__container:after {
+    content: ']';
+    position: absolute;
+    right: 0;
+  }
+  
+  .content__container:after, .content__container:before {
+    position: absolute;
+    top: -2px;
+    color: #000000;
+    font-size: 42px;
+    line-height: 40px;
+    -webkit-animation-name: opacity;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    animation-name: opacity;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+  
+  .content__container__text {
+    display: inline;
+    float: left;
+    margin: 0;
+  }
+  
+  .content__container__list {
+    margin-top: 0;
+    padding-left: 110px;
+    text-align: left;
+    list-style: none;
+    color: #000;
+    -webkit-animation-name: change;
+    -webkit-animation-duration: 10s;
+    -webkit-animation-iteration-count: infinite;
+    animation-name: change;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+  }
+  
+  .content__container__list__item {
+    line-height: 40px;
+    margin: 0;
+  }
+  
+  @keyframes opacity {
+    0%, 100% {
+      opacity: 0;
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes change {
+    0%, 12.66%, 100% {
+      transform: translate3d(0, 0, 0);
+    }
+  
+    16.66%, 29.32% {
+      transform: translate3d(0, -25%, 0);
+    }
+  
+    33.32%, 45.98% {
+      transform: translate3d(0, -50%, 0);
+    }
+  
+    49.98%, 62.64% {
+      transform: translate3d(0, -75%, 0);
+    }
+  
+    66.64%, 79.3% {
+      transform: translate3d(0, -50%, 0);
+    }
+  
+    83.3%, 95.96% {
+      transform: translate3d(0, -25%, 0);
+    }
+  }
+   
+
+.description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #000000;
+    margin: 2rem 0;
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out 1s forwards;
+}
+
+.stats-container {
+    display: flex;
+    gap: 3rem;
+    margin-top: 3rem;
+    opacity: 0;
+    animation: slideUp 0.8s ease-out 1.2s forwards;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #00523f;
+}
+
+.label {
+    color: #000000;
+    margin-top: 0.5rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes changeRole {
+    0%, 30% {
+        transform: translateY(0);
+    }
+    31%, 60% {
+        transform: translateY(-45px);
+    }
+    61%, 90% {
+        transform: translateY(-90px);
+    }
+    91%, 100% {
+        transform: translateY(0);
+    }
+}
+
+
+/* Add hover effects */
+.name:hover {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.stat:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+.stat:hover .number {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .intro, .name {
+        font-size: 2rem;
+    }
+    
+    .role {
+        font-size: 1.5rem;
+    }
+    
+    .stats-container {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
     }
 }
