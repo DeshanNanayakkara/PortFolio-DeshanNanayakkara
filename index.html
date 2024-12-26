@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/home.css">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  
     <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
@@ -21,187 +23,7 @@
     />
   </head>
   <body>
-    <!-- <header class="header">
-      <div class="header__content">
-        <div class="header__logo-container">
-          <div class="header__logo-img-cont">
-            <img
-              src="./assets/jpeg/img4.jpg"
-              alt="Ram Maheshwari Logo Image"
-              class="header__logo-img"
-            />
-          </div>
-          <span class="header__logo-sub">Deshan Nanayakkara</span>
-        </div>
-        <div class="header__main">
-          <ul class="header__links">
-            <li class="header__link-wrapper">
-              <a href="./index.html#home" class="header__link"> Home </a>
-            </li>
-            <li class="header__link-wrapper">
-              <a href="./index.html#about" class="header__link">About </a>
-            </li>
-            <li class="header__link-wrapper">
-              <a href="./index.html#projects" class="header__link">
-                Projects
-              </a>
-            </li>
-            <li class="header__link-wrapper">
-              <a href="./index.html#contact" class="header__link"> Contact </a>
-            </li>
-          </ul>
-          <div class="header__main-ham-menu-cont">
-            <img
-              src="./assets/svg/ham-menu.svg"
-              alt="hamburger menu"
-              class="header__main-ham-menu"
-            />
-            <img
-              src="./assets/svg/ham-menu-close.svg"
-              alt="hamburger menu close"
-              class="header__main-ham-menu-close d-none"
-            />
-          </div>
-        </div>
-      </div>
-      <div class="header__sm-menu">
-        <div class="header__sm-menu-content">
-          <ul class="header__sm-menu-links">
-            <li class="header__sm-menu-link">
-              <a href="./index.html#home"> Home </a>
-            </li>
-
-            <li class="header__sm-menu-link">
-              <a href="./index.html#about"> About </a>
-            </li>
-
-            <li class="header__sm-menu-link">
-              <a href="./index.html#projects"> Projects </a>
-            </li>
-
-            <li class="header__sm-menu-link">
-              <a href="./index.html#contact"> Contact </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </header> -->
-    <!-- 
-    .header {
-  position: fixed;
-  width: 100%;
-  z-index: 1000;
-  background: #000;
-  background: #fff;
-  box-shadow: 0 10px 100px rgba(0, 0, 0, 0.1); }
-  .header__content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 5rem; }
-    @media only screen and (max-width: 56.25em) {
-      .header__content {
-        padding: 0 2rem; } }
-  .header__logo-container {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    color: #333;
-    transition: color .3s; }
-    .header__logo-container:hover {
-      color: #0062b9; }
-  .header__logo-img-cont {
-    width: 5rem;
-    height: 5rem;
-    border-radius: 50px;
-    overflow: hidden;
-    margin-right: 1.5rem;
-    background: #0062b9; }
-    @media only screen and (max-width: 56.25em) {
-      .header__logo-img-cont {
-        width: 4.5rem;
-        height: 4.5rem;
-        margin-right: 1.2rem; } }
-  .header__logo-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block; }
-  .header__logo-sub {
-    font-size: 1.8rem;
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 1px; }
-  .header__links {
-    display: flex; }
-    @media only screen and (max-width: 37.5em) {
-      .header__links {
-        display: none; } }
-  .header__link {
-    padding: 2.2rem 3rem;
-    display: inline-block;
-    font-size: 1.6rem;
-    color: #333;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 700;
-    transition: color .3s; }
-    .header__link:hover {
-      color: #0062b9; }
-    @media only screen and (max-width: 56.25em) {
-      .header__link {
-        padding: 3rem 1.8rem;
-        font-size: 1.5rem; } }
-  .header__main-ham-menu-cont {
-    display: none;
-    width: 3rem;
-    padding: 1.2rem 0; }
-    @media only screen and (max-width: 37.5em) {
-      .header__main-ham-menu-cont {
-        display: block; } }
-  .header__main-ham-menu {
-    width: 100%; }
-  .header__main-ham-menu-close {
-    width: 100%; }
-  .header__sm-menu {
-    background: #fff;
-    /* height: 10vh; */
-    position: absolute;
-    width: 100%;
-    top: 100%;
-    visibility: hidden;
-    opacity: 0;
-    transition: all .3s;
-    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.1);
-    -webkit-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.1); }
-    .header__sm-menu--active {
-      visibility: hidden;
-      opacity: 0; }
-      @media only screen and (max-width: 37.5em) {
-        .header__sm-menu--active {
-          visibility: visible;
-          opacity: 1; } }
-  .header__sm-menu-link a {
-    display: block;
-    text-decoration: none;
-    padding: 2.5rem 3rem;
-    font-size: 1.6rem;
-    color: #333;
-    text-align: right;
-    border-bottom: 1px solid #eee;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    transition: color .3s; }
-    .header__sm-menu-link a:hover {
-      color: #0062b9; }
-  .header__sm-menu-link:first-child a {
-    border-top: 1px solid #eee; }
-  .header__sm-menu-link-last {
-    border-bottom: 0; }
- -->
+   
  <nav class="navbar bg-body-tertiary fixed-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Deshan Nanayakkara</a>
@@ -238,51 +60,61 @@
       <div class="image-box">
         <nav class="social">
           <ul>
-            <li><a href="https://github.com/highflyer910" class="social-text">Github <i class="fa fa-github"></i></a></li>
-            <li><a href="https://www.linkedin.com/in/teonamushambadze" class="social-text">Linkedin <i class="fa fa-linkedin"></i></a></li>
+            <li><a href="" class="social-text">Facebook<i class="fab fa-facebook"></i></a></li>
+            <li><a href="" class="social-text">instagram<i class="fab fa-instagram"></i></a></li>
+            <li><a href="" class="social-text">Tiktok<i class="fab fa-tiktok"></i></a></li>
           </ul>
       </nav>
       </div>
       <div class="home-content">
+        <div class="background-text">DESHAN</div>
         <div class="hero-container">
+          
           <div class="text-content">
-              <h1 class="welcome">Welcome to my world</h1>
+              <h1 class="welcome">Solutions That Matter</h1>
               <div class="role-container">
                   <span class="intro">I'm</span>
                   <span class="name">Deshan Nanayakkara</span>
-<div class="container">
-  <div class="content">
-    <div class="content__container">
-      <p class="content__container__text">
-        Hello
-      </p>
-    
-      <ul class="content__container__list">
-        <li class="content__container__list__item">world !</li>
-        <li class="content__container__list__item">coder !</li>
-        <li class="content__container__list__item">users !</li>
-        <li class="content__container__list__item">uiverse</li>
-      </ul>
-    </div>
-  </div>
-</div>
+                  <div class="container">
+                    <div class="content">
+                      <div class="content__container">
+                        <p class="content__container__text">
+                          Unveiling
+                        </p>
+                        <ul class="content__container__list">
+                          
+                          <li class="content__container__list__item">Full-Stack Developer</li>
+                          <li class="content__container__list__item">Code Whisperer</li>
+                          <li class="content__container__list__item"> Design Alchemist</li>
+                          <li class="content__container__list__item">User Magician</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
               </div>
               
-              <p class="description">Passionate about creating seamless digital experiences. 
-                 Transforming ideas into elegant, efficient, and user-friendly solutions.</p>
-              <div class="stats-container">
-                  <div class="stat">
-                      <span class="number">50+</span>
-                      <span class="label">Projects</span>
-                  </div>
-                  <div class="stat">
-                      <span class="number">3+</span>
-                      <span class="label">Years</span>
-                  </div>
-                  <div class="stat">
-                      <span class="number">30+</span>
-                      <span class="label">Clients</span>
-                  </div>
+              <p class="description">Continuously learning and growing, I'm passionate about software engineering and building impactful digital products.</p>
+              <br>
+              <br>
+              <a href="./index.html#about">
+                <button class="cta">
+                  <span>Meet Deshan</span>
+                  <svg width="15px" height="10px" viewBox="0 0 13 10">
+                    <path d="M1,5 L11,5"></path>
+                    <polyline points="8 1 12 5 8 9"></polyline>
+                  </svg>
+                </button>
+              </a>
+              <div class="social-iconset">
+                <div class="social-icon facebook">
+                  <i class="fab fa-github"></i>
+                </div>
+                <div class="social-icon instagram">
+                  <i class="fab fa-linkedin"></i>
+                </div>
+                <div class="social-icon youtube">
+                  <i class="fab fa-youtube"></i>
+                </div>
               </div>
           </div>
       </div>

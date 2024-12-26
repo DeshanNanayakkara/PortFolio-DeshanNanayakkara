@@ -60,23 +60,99 @@
     display: grid;
     grid-template-columns: 30vw 70vw;
 }
-
 .image-box {
-    background: 
-        linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), 
-        url('/assets/jpeg/IMG_20240312_210506_837-02[1].jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: slideshow2 10s ease-in-out infinite;
 }
+
+@keyframes slideshow2 {
+  0% {
+    background-image:
+      linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)),
+      url('/assets/jpeg/IMG_20240312_210506_837-02[1].jpg');
+    opacity: 1;
+  }
+  40% {
+    background-image:
+      linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)),
+      url('/assets/jpeg/IMG_20240312_210506_837-02[1].jpg');
+    opacity: 1;
+  }
+  45% {
+    opacity: 0.5;
+  }
+  50% {
+    background-image:
+      linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)),
+      url('/assets/jpeg/img3.jpg');
+    opacity: 1;
+  }
+  90% {
+    background-image:
+      linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)),
+      url('/assets/jpeg/img3.jpg');
+    opacity: 1;
+  }
+  95% {
+    opacity: 0.5;
+  }
+  100% {
+    background-image:
+      linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)),
+      url('/assets/jpeg/IMG_20240312_210506_837-02[1].jpg');
+    opacity: 1;
+  }
+}
+
 .home-content {
     place-content: center;
     padding-top: 10vh;
-    margin-left: 100px;
     display: grid;
     grid-template-columns: auto 50px;
+    position: relative; /* Ensure proper positioning for the background text */
+    overflow: hidden; /* Prevent overflow if the text is too large */
 }
+
+.background-text {
+    position: absolute;
+    top: 40%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for true centering */
+    font-size: 15vw; /* Responsive font size relative to viewport width */
+    font-family: Sans-serif;
+    opacity: 0;
+    color: #00000023;
+    z-index: 100; /* Ensure it remains behind other content */
+    animation: fadeIn 2s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.2;
+    }
+}
+
+/* Media Queries for finer control */
+@media (max-width: 768px) {
+    .background-text {
+        font-size: 15vw; /* Larger font size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .background-text {
+        font-size: 20vw; /* Even larger font size for very small screens */
+    }
+}
+
 .header{
     position: absolute;
     transform: translate(-50%, -50%);
@@ -205,11 +281,11 @@
     font-weight: 600;
     overflow: hidden;
     height: 40px;
-    padding: 0 40px;
+    /* padding: 0 40px; */
   }
   
-  .content__container:before {
-    content: '[';
+  /* .content__container:before {
+    content: '[';?
     left: 0;
   }
   
@@ -218,7 +294,7 @@
     position: absolute;
     right: 0;
   }
-  
+   */
   .content__container:after, .content__container:before {
     position: absolute;
     top: -2px;
@@ -236,20 +312,20 @@
   .content__container__text {
     display: inline;
     float: left;
-    margin: 0;
+    color: #0000007e;
   }
   
   .content__container__list {
     margin-top: 0;
-    padding-left: 110px;
+    padding-left: 180px;
     text-align: left;
     list-style: none;
-    color: #000;
+    color: #212056;
     -webkit-animation-name: change;
-    -webkit-animation-duration: 10s;
+    -webkit-animation-duration: 20s;
     -webkit-animation-iteration-count: infinite;
     animation-name: change;
-    animation-duration: 10s;
+    animation-duration: 20s;
     animation-iteration-count: infinite;
   }
   
@@ -296,7 +372,7 @@
    
 
 .description {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     line-height: 1.6;
     color: #000000;
     margin: 2rem 0;
@@ -394,4 +470,120 @@
         gap: 2rem;
         align-items: center;
     }
+}
+.social-iconset {
+  margin-right: 30px;
+  margin-bottom: 30px;
+  position: absolute;
+    bottom: 0; /* Align to the bottom of the parent container */
+    /* left: 0; Optional: Align to the left edge of the parent */
+    right: 0;
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.social-icon {
+  width: 50px;
+  height: 50px;
+  background: #000000ad;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.social-icon i {
+  color: white;
+  font-size: 20px;
+  transition: all 0.3s ease;
+}
+
+/* Hover Effects */
+.social-icon:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.social-icon.facebook:hover {
+  background: #1877f2;
+}
+
+.social-icon.instagram:hover {
+  background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+}
+
+.social-icon.tiktok:hover {
+  background: #000;
+}
+
+.social-icon.tiktok:hover i {
+  color: #00f2ea;
+}
+
+.social-icon.youtube:hover {
+  background: #FF0000;
+}
+
+/* From Uiverse.io by alexmaracinaru */ 
+.cta {
+  position: relative;
+  margin: auto;
+  padding: 9px 18px;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.cta:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: 50px;
+  background: #b1dae7;
+  width: 45px;
+  height: 45px;
+  transition: all 0.3s ease;
+}
+
+.cta span {
+  position: relative;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #234567;
+}
+
+.cta svg {
+  position: relative;
+  top: 0;
+  margin-left: 10px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #234567;
+  stroke-width: 2;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+}
+
+.cta:hover:before {
+  width: 100%;
+  background: #b1dae7;
+}
+
+.cta:hover svg {
+  transform: translateX(0);
+}
+
+.cta:active {
+  transform: scale(0.95);
 }
