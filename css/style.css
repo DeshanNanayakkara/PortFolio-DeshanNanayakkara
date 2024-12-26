@@ -355,8 +355,7 @@ textarea {
     text-align: center; }
 
 .project-details__content {
-  padding: 8rem 0;
-  max-width: 90rem;
+  max-width: 80vw;
   margin: auto; }
   .project-details__content-title {
     font-weight: 700;
@@ -375,7 +374,7 @@ textarea {
 
 .project-details__content-main {
   width: 100%;
-  max-width: 70rem;
+  /* max-width: 70rem; */
   margin: auto; }
 
 .project-details__desc {
