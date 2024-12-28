@@ -126,7 +126,7 @@
     font-size: 15vw; /* Responsive font size relative to viewport width */
     font-family: Sans-serif;
     opacity: 0;
-    color: #00000023;
+    color: #34495e40;
     z-index: 100; /* Ensure it remains behind other content */
     animation: fadeIn 2s ease-in forwards;
 }
@@ -320,7 +320,7 @@
     padding-left: 180px;
     text-align: left;
     list-style: none;
-    color: #212056;
+    color: #2C3E50;
     -webkit-animation-name: change;
     -webkit-animation-duration: 20s;
     -webkit-animation-iteration-count: infinite;
@@ -547,7 +547,7 @@
   left: 0;
   display: block;
   border-radius: 50px;
-  background: #b1dae7;
+  background: #BDC3C7;
   width: 45px;
   height: 45px;
   transition: all 0.3s ease;
@@ -559,7 +559,7 @@
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.05em;
-  color: #234567;
+  color: #2C3E50;
 }
 
 .cta svg {
@@ -577,7 +577,7 @@
 
 .cta:hover:before {
   width: 100%;
-  background: #b1dae7;
+  background: #BDC3C7;
 }
 
 .cta:hover svg {
@@ -597,8 +597,8 @@
   height: 3em;
   padding: 0 3em;
   border: none;
-  background-color: #1b2fc4;
-  color: #fff;
+  background-color: #2C3E50;
+  color: #ffffff;
   text-transform: uppercase;
   overflow: hidden;
   border-radius: 5px
@@ -613,8 +613,8 @@
   left: 0;
   height: 0px;
   width: 100%;
-  background: rgb(27, 114, 196);
-  background: linear-gradient(90deg, rgb(27, 109, 196) 20%, rgb(58, 7, 124) 100%);
+  color: white;
+  background: linear-gradient(90deg, #384146 20%, #34495E 100%);
   transition: 0.2s;
  }
  

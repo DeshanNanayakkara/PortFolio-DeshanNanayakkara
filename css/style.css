@@ -123,7 +123,7 @@ textarea {
   width: 92%; }
 
 .btn {
-  background: #000000;
+  background: #34495E;
   color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -141,12 +141,11 @@ textarea {
     padding: 1.5rem 5rem;
     font-size: 1.6rem; }
   .btn--theme {
-    background: #000000;
+    background: #34495E;
     color: #fff; }
   .btn--theme-inv {
-    color: #000000;
-    background: #fff;
-    border: 2px solid #000000;
+    color: #ffffff;
+    background: #34495E;
     box-shadow: none;
     padding: calc(1.5rem - 2px) calc(5rem - 2px); }
 
@@ -171,7 +170,7 @@ textarea {
 
 
 .about {
-  background: #e1e1e1; }
+  background: #bdc3c785; }
   .about__content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -247,7 +246,7 @@ textarea {
           font-size: 1.7rem; } }
 #contact{
   display: grid;
-  background-color: #d7d7d7;
+  background-color: #bdc3c785;
   padding: 30px;
 
 }
@@ -292,7 +291,7 @@ textarea {
 .qr-subtitle {
   font-family: system-ui, -apple-system, sans-serif;
   font-size: 0.9rem;
-  color: #666;
+  color: #545454;
   margin-bottom: 1.5rem;
 }
 
@@ -307,7 +306,7 @@ textarea {
 .qr-scan-text {
   font-family: system-ui, -apple-system, sans-serif;
   font-size: 0.85rem;
-  color: #666;
+  color: #545454;
 }
 
 @media (max-width: 400px) {
@@ -496,7 +495,9 @@ button {
     @media only screen and (max-width: 56.25em) {
       .main-footer__lower {
         padding: 3.5rem 0; } }
-
+.skills__skill:hover{
+  background-color: #ffffffae;
+}
 .skills {
   display: flex;
   flex-wrap: wrap; }
@@ -505,10 +506,10 @@ button {
     margin-bottom: 1.5rem;
     margin-right: 1.5rem;
     font-size: 1.6rem;
-    background: rgba(153, 153, 153, 0.2);
+    background: #ecf0f191;
     border-radius: 5px;
     font-weight: 600;
-    color: #777; }
+    color: #5e5e5e; }
 
 .mouse {
   width: 25px;
@@ -593,7 +594,7 @@ button {
   align-items: center;
   gap: 10px;
   padding: 12px 25px;
-  background: #24292e;
+  background: #34495E;
   color: white;
   border: none;
   border-radius: 25px;
@@ -605,7 +606,7 @@ button {
 }
 
 .github-btn:hover {
-  background: #2b3137;
+  background: #2C3E50;
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
@@ -622,7 +623,7 @@ button {
   top: -45px;
   left: 50%;
   transform: translateX(-50%) translateY(10px);
-  background: #333;
+  background: #2C3E50;
   color: white;
   padding: 8px 15px;
   border-radius: 6px;
