@@ -62,3 +62,43 @@ const slides = document.querySelectorAll('.slide');
       currentSlide = (currentSlide + 1) % slides.length;
       showSlide(currentSlide);
     }, 5000);
+    
+
+
+    const projectTrack = document.querySelector('.project-gallery-track');
+    const projectSlides = document.querySelectorAll('.project-gallery-slide');
+    const projectDots = document.querySelectorAll('.project-gallery-dot');
+    const projectPrevBtn = document.querySelector('.project-gallery-prev');
+    const projectNextBtn = document.querySelector('.project-gallery-next');
+    
+    let currentProjectSlide = 0;
+    
+    function updateProjectGallery() {
+        projectTrack.style.transform = `translateX(-${currentProjectSlide * 100}%)`;
+        projectDots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentProjectSlide);
+        });
+    }
+    
+    projectDots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentProjectSlide = index;
+            updateProjectGallery();
+        });
+    });
+    
+    projectPrevBtn.addEventListener('click', () => {
+        currentProjectSlide = (currentProjectSlide - 1 + projectSlides.length) % projectSlides.length;
+        updateProjectGallery();
+    });
+    
+    projectNextBtn.addEventListener('click', () => {
+        currentProjectSlide = (currentProjectSlide + 1) % projectSlides.length;
+        updateProjectGallery();
+    });
+    
+    // Auto-advance slides every 5 seconds
+    setInterval(() => {
+        currentProjectSlide = (currentProjectSlide + 1) % projectSlides.length;
+        updateProjectGallery();
+    }, 5000);

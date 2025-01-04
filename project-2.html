@@ -1,230 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Case Study of Project 2</title>
-    <meta name="description" content="Case study page of Project" />
+<head>
+    <style>
+        .project-showcase-section {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: projectFadeInUp 0.8s ease forwards;
+        }
 
-    <link rel="stylesheet" href="css/style.css" />
+        @keyframes projectFadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <header class="header">
-      <div class="header__content">
-        <div class="header__logo-container">
-          <div class="header__logo-img-cont">
-            <img
-              src="./assets/png/john-doe.png"
-              alt="Ram Maheshwari Logo Image"
-              class="header__logo-img"
-            />
-          </div>
-          <span class="header__logo-sub">John Doe</span>
-        </div>
-        <div class="header__main">
-          <ul class="header__links">
-            <li class="header__link-wrapper">
-              <a href="./index.html" class="header__link"> Home </a>
-            </li>
-            <li class="header__link-wrapper">
-              <a href="./index.html#about" class="header__link">About </a>
-            </li>
-            <li class="header__link-wrapper">
-              <a href="./index.html#projects" class="header__link">
-                Projects
-              </a>
-            </li>
-            <li class="header__link-wrapper">
-              <a href="./index.html#contact" class="header__link"> Contact </a>
-            </li>
-          </ul>
-          <div class="header__main-ham-menu-cont">
-            <img
-              src="./assets/svg/ham-menu.svg"
-              alt="hamburger menu"
-              class="header__main-ham-menu"
-            />
-            <img
-              src="./assets/svg/ham-menu-close.svg"
-              alt="hamburger menu close"
-              class="header__main-ham-menu-close d-none"
-            />
-          </div>
-        </div>
-      </div>
-      <div class="header__sm-menu">
-        <div class="header__sm-menu-content">
-          <ul class="header__sm-menu-links">
-            <li class="header__sm-menu-link">
-              <a href="./index.html"> Home </a>
-            </li>
+        .project-showcase-title {
+            font-size: 2.5rem;
+            color: #2d3436;
+            margin-bottom: 1rem;
+            position: relative;
+        }
 
-            <li class="header__sm-menu-link">
-              <a href="./index.html#about"> About </a>
-            </li>
+        .project-showcase-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: #0984e3;
+            animation: projectLineWidth 1s ease forwards 0.5s;
+        }
 
-            <li class="header__sm-menu-link">
-              <a href="./index.html#projects"> Projects </a>
-            </li>
+        @keyframes projectLineWidth {
+            to {
+                width: 100px;
+            }
+        }
 
-            <li class="header__sm-menu-link">
-              <a href="./index.html#contact"> Contact </a>
-            </li>
-          </ul>
+        .project-showcase-description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #636e72;
+            margin: 1.5rem 0;
+            opacity: 0;
+            animation: projectFadeIn 0.8s ease forwards 0.3s;
+        }
+
+        .project-technologies {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 1.5rem 0;
+        }
+
+        .project-tech-tag {
+            padding: 0.5rem 1rem;
+            background: #dfe6e9;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            opacity: 0;
+            transform: translateX(-10px);
+        }
+
+        .project-tech-tag:nth-child(1) { animation: projectSlideIn 0.5s ease forwards 0.6s; }
+        .project-tech-tag:nth-child(2) { animation: projectSlideIn 0.5s ease forwards 0.7s; }
+        .project-tech-tag:nth-child(3) { animation: projectSlideIn 0.5s ease forwards 0.8s; }
+        .project-tech-tag:nth-child(4) { animation: projectSlideIn 0.5s ease forwards 0.9s; }
+
+        @keyframes projectSlideIn {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes projectFadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .project-gallery-container {
+            width: 100%;
+            height: 400px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-top: 2rem;
+        }
+
+        .project-gallery-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .project-gallery-slide {
+            min-width: 100%;
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .project-gallery-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-gallery-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .project-gallery-dot.active {
+            background: white;
+        }
+
+        .project-gallery-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.3);
+            border: none;
+            padding: 1rem;
+            cursor: pointer;
+            color: white;
+            font-size: 1.5rem;
+            transition: background 0.3s ease;
+        }
+
+        .project-gallery-nav:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .project-gallery-prev {
+            left: 20px;
+        }
+
+        .project-gallery-next {
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <section class="project-showcase-section">
+        <h2 class="project-showcase-title">E-Commerce Dashboard</h2>
+        
+        <div class="project-showcase-description">
+            A comprehensive e-commerce analytics dashboard that provides real-time insights
+            into sales performance, inventory management, and customer behavior. Features
+            include customizable widgets, data visualization, and automated reporting
+            capabilities.
         </div>
-      </div>
-    </header>
-    <section class="project-cs-hero">
-      <div class="project-cs-hero__content">
-        <h1 class="heading-primary">Project 2</h1>
-        <div class="project-cs-hero__info">
-          <p class="text-primary">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos
-            in numquam incidunt earum quaerat cum fuga, atque similique natus
-            nobis sit.
-          </p>
+        
+        <div class="project-technologies">
+            <span class="project-tech-tag">React.js</span>
+            <span class="project-tech-tag">Node.js</span>
+            <span class="project-tech-tag">MongoDB</span>
+            <span class="project-tech-tag">D3.js</span>
         </div>
-        <div class="project-cs-hero__cta">
-          <a href="#" class="btn btn--bg" target="_blank">Live Link</a>
+        
+        <div class="project-gallery-container">
+            <div class="project-gallery-track">
+                <div class="project-gallery-slide" style="background-image: url('/assets/greenshadow/Screenshot\ 2024-12-26\ 202624.png')"></div>
+                <div class="project-gallery-slide" style="background-image: url('/assets/greenshadow/Screenshot\ 2024-12-26\ 202736.png')"></div>
+                <div class="project-gallery-slide" style="background-image: url('/assets/jpeg/img2.jpg')"></div>
+            </div>
+            
+            <button class="project-gallery-nav project-gallery-prev">←</button>
+            <button class="project-gallery-nav project-gallery-next">→</button>
+            
+            <div class="project-gallery-dots">
+                <button class="project-gallery-dot active"></button>
+                <button class="project-gallery-dot"></button>
+                <button class="project-gallery-dot"></button>
+            </div>
         </div>
-      </div>
     </section>
-    <section class="project-details">
-      <div class="main-container">
-        <div class="project-details__content">
-          <div class="project-details__showcase-img-cont">
-            <img
-              src="./assets/jpeg/project-mockup-example.jpeg"
-              alt="Project Image"
-              class="project-details__showcase-img"
-            />
-          </div>
-          <div class="project-details__content-main">
-            <div class="project-details__desc">
-              <h3 class="project-details__content-title">Project Overview</h3>
-              <p class="project-details__desc-para">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
-                alias tenetur minus quaerat aliquid, aut provident blanditiis,
-                deleniti aspernatur ipsam eaque veniam voluptatem corporis vitae
-                mollitia laborum corrupti ullam rem. Lorem ipsum dolor sit amet
-                consectetur adipisicing elit. Neque alias tenetur minus quaerat
-                aliquid, aut provident blanditiis, deleniti aspernatur ipsam
-                eaque veniam voluptatem corporis vitae mollitia laborum corrupti
-                ullam rem?
-              </p>
-              <p class="project-details__desc-para">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
-                alias tenetur minus quaerat aliquid, aut provident blanditiis,
-                deleniti aspernatur ipsam eaque veniam voluptatem corporis vitae
-                mollitia laborum corrupti ullam rem?
-              </p>
-            </div>
-            <div class="project-details__tools-used">
-              <h3 class="project-details__content-title">Tools Used</h3>
-              <div class="skills">
-                <div class="skills__skill">HTML</div>
-                <div class="skills__skill">CSS</div>
-                <div class="skills__skill">JavaScript</div>
-                <div class="skills__skill">React</div>
-                <div class="skills__skill">SASS</div>
-                <div class="skills__skill">GIT</div>
-                <div class="skills__skill">Shopify</div>
-                <div class="skills__skill">Wordpress</div>
-                <div class="skills__skill">Google ADS</div>
-                <div class="skills__skill">Facebook Ads</div>
-                <div class="skills__skill">Android</div>
-                <div class="skills__skill">IOS</div>
-              </div>
-            </div>
-            <div class="project-details__links">
-              <h3 class="project-details__content-title">See Live</h3>
-              <a
-                href="#"
-                class="btn btn--med btn--theme project-details__links-btn"
-                target="_blank"
-                >Live Link</a
-              >
-              <a
-                href="#"
-                class="btn btn--med btn--theme-inv project-details__links-btn"
-                target="_blank"
-                >Code Link</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <footer class="main-footer">
-      <div class="main-container">
-        <div class="main-footer__upper">
-          <div class="main-footer__row main-footer__row-1">
-            <h2 class="heading heading-sm main-footer__heading-sm">
-              <span>Social</span>
-            </h2>
-            <div class="main-footer__social-cont">
-              <a target="_blank" rel="noreferrer" href="#">
-                <img
-                  class="main-footer__icon"
-                  src="./assets/png/linkedin-ico.png"
-                  alt="icon"
-                />
-              </a>
-              <a target="_blank" rel="noreferrer" href="#">
-                <img
-                  class="main-footer__icon"
-                  src="./assets/png/github-ico.png"
-                  alt="icon"
-                />
-              </a>
-              <a target="_blank" rel="noreferrer" href="#">
-                <img
-                  class="main-footer__icon"
-                  src="./assets/png/twitter-ico.png"
-                  alt="icon"
-                />
-              </a>
-              <a target="_blank" rel="noreferrer" href="#">
-                <img
-                  class="main-footer__icon"
-                  src="./assets/png/yt-ico.png"
-                  alt="icon"
-                />
-              </a>
-              <a target="_blank" rel="noreferrer" href="#">
-                <img
-                  class="main-footer__icon main-footer__icon--mr-none"
-                  src="./assets/png/insta-ico.png"
-                  alt="icon"
-                />
-              </a>
-            </div>
-          </div>
-          <div class="main-footer__row main-footer__row-2">
-            <h4 class="heading heading-sm text-lt">John Doe</h4>
-            <p class="main-footer__short-desc">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit facilis
-              tempora explicabo quae quod deserunt
-            </p>
-          </div>
-        </div>
 
-        <div class="main-footer__lower">
-          &copy; Copyright 2021. Made by
-          <a rel="noreferrer" target="_blank" href="https://rammaheshwari.com"
-            >Ram Maheshwari</a
-          >
-        </div>
-      </div>
-    </footer>
-    <script src="./index.js"></script>
-  </body>
+    <script>
+        const projectTrack = document.querySelector('.project-gallery-track');
+        const projectSlides = document.querySelectorAll('.project-gallery-slide');
+        const projectDots = document.querySelectorAll('.project-gallery-dot');
+        const projectPrevBtn = document.querySelector('.project-gallery-prev');
+        const projectNextBtn = document.querySelector('.project-gallery-next');
+        
+        let currentProjectSlide = 0;
+        
+        function updateProjectGallery() {
+            projectTrack.style.transform = `translateX(-${currentProjectSlide * 100}%)`;
+            projectDots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentProjectSlide);
+            });
+        }
+        
+        projectDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentProjectSlide = index;
+                updateProjectGallery();
+            });
+        });
+        
+        projectPrevBtn.addEventListener('click', () => {
+            currentProjectSlide = (currentProjectSlide - 1 + projectSlides.length) % projectSlides.length;
+            updateProjectGallery();
+        });
+        
+        projectNextBtn.addEventListener('click', () => {
+            currentProjectSlide = (currentProjectSlide + 1) % projectSlides.length;
+            updateProjectGallery();
+        });
+        
+        // Auto-advance slides every 5 seconds
+        setInterval(() => {
+            currentProjectSlide = (currentProjectSlide + 1) % projectSlides.length;
+            updateProjectGallery();
+        }, 5000);
+    </script>
+</body>
 </html>
