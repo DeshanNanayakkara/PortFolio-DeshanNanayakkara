@@ -225,55 +225,61 @@
     </section>
     
     <section id="contact">
-      <!-- <h3>Connect with me on social media to stay updated on my latest projects, insights, and more. Feel free to follow or reach out through any of the platforms below!</h3> -->
-    
-      <form class="contact-form">
-        <h2 class="heading heading-sec heading-sec__mb-med">
-          <span class="heading-sec__main">Contact Me</span>
-          </h2>
-          <p class="heading-sec__sub">Have any questions or want to get in touch? send me a direct message, and I'll get back to you as soon as possible!</p>
-        <br>
-        <input 
-          type="email" 
-          class="form-input" 
-          placeholder="Enter your email"
-          required
-        >
-        
-        <textarea 
-          class="form-input" 
-          placeholder="Enter your message"
-          required
-        ></textarea>
-        
-        <button type="submit" class="submit-btn">
-          Send Message
-        </button>
-      </form>
-      <div class="qr-card">
-        <h3>- or -</h3>
-        <br>
-        <br>
-        <h2 class="about__content-title">Let's Connect on WhatsApp</h2>
-        
-        <!-- Replace the img src with your actual WhatsApp QR code -->
-        <div class="qr-placeholder">
-          <img src="/assets/jpeg/qr.jpg" alt="WhatsApp QR Code" style="width: 100%; height: 100%; object-fit: contain;">
+      <div class="containerC">
+        <div class="contact-wrapper">
+            <!-- Contact Form Section -->
+            <div class="contact-form">
+                <h2 class="about__content-title">Contact Me</h2>
+                <p class="heading-sec__sub">Have any questions or want to get in touch? Send me a direct message, and I'll get back to you as soon as possible!</p>
+                
+                <form>
+                    <div class="form-group">
+                        <input 
+                            type="email" 
+                            class="form-input" 
+                            placeholder="Enter your email"
+                            required
+                        >
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea 
+                            class="form-input" 
+                            placeholder="Enter your message"
+                            required
+                        ></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+
+            <!-- QR Code Section -->
+            <div class="qr-section">
+                <div>
+                    <h3 class="divider">- or -</h3>
+                    <h2 class="about__content-title">Let's Connect on WhatsApp</h2>
+                    
+                    <div class="qr-placeholder">
+                        <img src="path-to-your-qr-code.jpg" alt="WhatsApp QR Code">
+                    </div>
+                    
+                    <p class="heading-sec__sub" style="text-align: center;">Scan to start a conversation</p>
+                </div>
+                
+                <div class="social-icons">
+                    <div class="social-icon github">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div class="social-icon linkedin">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                </div>
+            </div>
         </div>
-        
-        <p class="heading-sec__sub" style="text-align: center;">Scan to start a conversation</p>
-        <br>
-        <br>
-        <div class="contact-iconset">
-          <div class="social-icon github"style="margin-right: 20px;">
-            <i class="fab fa-github" ></i>
-          </div>
-          <div class="social-icon linkedin"style="margin-left: 20px;">
-            <i class="fab fa-linkedin"></i>
-          </div>
-          </div>
-      </div>
-  </div>
+    </div>
     </section>
     <footer class="main-footer">
       <div class="main-container">

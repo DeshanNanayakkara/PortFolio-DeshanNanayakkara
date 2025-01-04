@@ -1,234 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        .project-showcase-section {
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            min-height: 100vh;
+        }
+
+        .container {
             max-width: 1200px;
-            margin: 2rem auto;
+            margin: 0 auto;
             padding: 2rem;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: projectFadeInUp 0.8s ease forwards;
         }
 
-        @keyframes projectFadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .project-showcase-title {
-            font-size: 2.5rem;
-            color: #2d3436;
-            margin-bottom: 1rem;
-            position: relative;
-        }
-
-        .project-showcase-title::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 3px;
-            background: #0984e3;
-            animation: projectLineWidth 1s ease forwards 0.5s;
-        }
-
-        @keyframes projectLineWidth {
-            to {
-                width: 100px;
-            }
-        }
-
-        .project-showcase-description {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: #636e72;
-            margin: 1.5rem 0;
-            opacity: 0;
-            animation: projectFadeIn 0.8s ease forwards 0.3s;
-        }
-
-        .project-technologies {
+        .contact-wrapper {
             display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin: 1.5rem 0;
-        }
-
-        .project-tech-tag {
-            padding: 0.5rem 1rem;
-            background: #dfe6e9;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            opacity: 0;
-            transform: translateX(-10px);
-        }
-
-        .project-tech-tag:nth-child(1) { animation: projectSlideIn 0.5s ease forwards 0.6s; }
-        .project-tech-tag:nth-child(2) { animation: projectSlideIn 0.5s ease forwards 0.7s; }
-        .project-tech-tag:nth-child(3) { animation: projectSlideIn 0.5s ease forwards 0.8s; }
-        .project-tech-tag:nth-child(4) { animation: projectSlideIn 0.5s ease forwards 0.9s; }
-
-        @keyframes projectSlideIn {
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes projectFadeIn {
-            to {
-                opacity: 1;
-            }
-        }
-
-        .project-gallery-container {
-            width: 100%;
-            height: 400px;
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
+            flex-direction: column;
+            gap: 2rem;
             margin-top: 2rem;
         }
 
-        .project-gallery-track {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-
-        .project-gallery-slide {
-            min-width: 100%;
-            height: 400px;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .project-gallery-dots {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 1rem;
-        }
-
-        .project-gallery-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            border: none;
-            background: rgba(255, 255, 255, 0.5);
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .project-gallery-dot.active {
+        .contact-form,
+        .qr-section {
             background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         }
 
-        .project-gallery-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.3);
-            border: none;
+        .contact-form {
+            flex: 1;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .section-subtitle {
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-input {
+            width: 100%;
             padding: 1rem;
-            cursor: pointer;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+
+        textarea.form-input {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: #007bff;
             color: white;
-            font-size: 1.5rem;
-            transition: background 0.3s ease;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
         }
 
-        .project-gallery-nav:hover {
-            background: rgba(255, 255, 255, 0.5);
+        .submit-btn:hover {
+            background: #0056b3;
         }
 
-        .project-gallery-prev {
-            left: 20px;
+        .qr-section {
+            flex: 1;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        .project-gallery-next {
-            right: 20px;
+        .divider {
+            font-size: 1.2rem;
+            color: #666;
+            margin: 1rem 0;
+        }
+
+        .qr-placeholder {
+            width: 250px;
+            height: 250px;
+            margin: 2rem auto;
+            background: #f5f5f5;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .qr-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-3px);
+        }
+
+        .github {
+            background: #333;
+        }
+
+        .linkedin {
+            background: #0077b5;
+        }
+
+        /* Media Queries */
+        @media screen and (min-width: 768px) {
+            .contact-wrapper {
+                flex-direction: row;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .contact-form,
+            .qr-section {
+                padding: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .qr-placeholder {
+                width: 200px;
+                height: 200px;
+                margin: 1.5rem auto;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .qr-placeholder {
+                width: 180px;
+                height: 180px;
+            }
+
+            .social-icon {
+                width: 35px;
+                height: 35px;
+            }
         }
     </style>
 </head>
 <body>
-    <section class="project-showcase-section">
-        <h2 class="project-showcase-title">E-Commerce Dashboard</h2>
-        
-        <div class="project-showcase-description">
-            A comprehensive e-commerce analytics dashboard that provides real-time insights
-            into sales performance, inventory management, and customer behavior. Features
-            include customizable widgets, data visualization, and automated reporting
-            capabilities.
-        </div>
-        
-        <div class="project-technologies">
-            <span class="project-tech-tag">React.js</span>
-            <span class="project-tech-tag">Node.js</span>
-            <span class="project-tech-tag">MongoDB</span>
-            <span class="project-tech-tag">D3.js</span>
-        </div>
-        
-        <div class="project-gallery-container">
-            <div class="project-gallery-track">
-                <div class="project-gallery-slide" style="background-image: url('/assets/greenshadow/Screenshot\ 2024-12-26\ 202624.png')"></div>
-                <div class="project-gallery-slide" style="background-image: url('/assets/greenshadow/Screenshot\ 2024-12-26\ 202736.png')"></div>
-                <div class="project-gallery-slide" style="background-image: url('/assets/jpeg/img2.jpg')"></div>
+    <div class="container">
+        <div class="contact-wrapper">
+            <!-- Contact Form Section -->
+            <div class="contact-form">
+                <h2 class="section-title">Contact Me</h2>
+                <p class="section-subtitle">Have any questions or want to get in touch? Send me a direct message, and I'll get back to you as soon as possible!</p>
+                
+                <form>
+                    <div class="form-group">
+                        <input 
+                            type="email" 
+                            class="form-input" 
+                            placeholder="Enter your email"
+                            required
+                        >
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea 
+                            class="form-input" 
+                            placeholder="Enter your message"
+                            required
+                        ></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        Send Message
+                    </button>
+                </form>
             </div>
-            
-            <button class="project-gallery-nav project-gallery-prev">←</button>
-            <button class="project-gallery-nav project-gallery-next">→</button>
-            
-            <div class="project-gallery-dots">
-                <button class="project-gallery-dot active"></button>
-                <button class="project-gallery-dot"></button>
-                <button class="project-gallery-dot"></button>
-            </div>
-        </div>
-    </section>
 
-    <script>
-        const projectTrack = document.querySelector('.project-gallery-track');
-        const projectSlides = document.querySelectorAll('.project-gallery-slide');
-        const projectDots = document.querySelectorAll('.project-gallery-dot');
-        const projectPrevBtn = document.querySelector('.project-gallery-prev');
-        const projectNextBtn = document.querySelector('.project-gallery-next');
-        
-        let currentProjectSlide = 0;
-        
-        function updateProjectGallery() {
-            projectTrack.style.transform = `translateX(-${currentProjectSlide * 100}%)`;
-            projectDots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === currentProjectSlide);
-            });
-        }
-        
-        projectDots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                currentProjectSlide = index;
-                updateProjectGallery();
-            });
-        });
-        
-        projectPrevBtn.addEventListener('click', () => {
-            currentProjectSlide = (currentProjectSlide - 1 + projectSlides.length) % projectSlides.length;
-            updateProjectGallery();
-        });
-        
-        projectNextBtn.addEventListener('click', () => {
-            currentProjectSlide = (currentProjectSlide + 1) % projectSlides.length;
-            updateProjectGallery();
-        });
-        
-        // Auto-advance slides every 5 seconds
-        setInterval(() => {
-            currentProjectSlide = (currentProjectSlide + 1) % projectSlides.length;
-            updateProjectGallery();
-        }, 5000);
-    </script>
+            <!-- QR Code Section -->
+            <div class="qr-section">
+                <div>
+                    <h3 class="divider">- or -</h3>
+                    <h2 class="section-title">Let's Connect on WhatsApp</h2>
+                    
+                    <div class="qr-placeholder">
+                        <img src="path-to-your-qr-code.jpg" alt="WhatsApp QR Code">
+                    </div>
+                    
+                    <p class="section-subtitle">Scan to start a conversation</p>
+                </div>
+                
+                <div class="social-icons">
+                    <div class="social-icon github">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div class="social-icon linkedin">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
