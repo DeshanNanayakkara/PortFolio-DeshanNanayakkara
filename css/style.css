@@ -924,17 +924,17 @@ button {
 }
 
 /* Media Queries for finer control */
-@media (max-width: 768px) {
+@media (max-width: 1050px) {
     .background-text {
-        font-size: 15vw; /* Larger font size for smaller screens */
+        font-size: 10vw; /* Larger font size for smaller screens */
     }
 }
 
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
     .background-text {
-        font-size: 20vw; /* Even larger font size for very small screens */
+        font-size: 20vw; /* Even larger font size for very small screens 
     }
-}
+} */
 
 .header{
     position: absolute;
@@ -962,27 +962,24 @@ button {
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-    .home {
-        grid-template-columns: 40vw 60vw; /* Adjust column widths for tablets */
+    .background-text{
+      display: none;
     }
-    .home-content {
-        margin-left: 50px; /* Reduce margin for smaller screens */
-    }
+}
+@media (max-width: 760px) {
+  .home{
+    display: none;
+  }
 }
 
 @media (max-width: 768px) {
-    .home {
-        grid-template-columns: 1fr; /* Stack the sections vertically */
+    #home {
+        display: none; /* Stack the sections vertically */
     }
     .home-content {
-        margin-left: 0;
-        text-align: center; /* Center-align content for smaller screens */
+      display: none;
     }
-    .image-box {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+    
     .image1 {
         width: 80%; /* Scale down the image for better fit */
         height: auto;

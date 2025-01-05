@@ -1,0 +1,54 @@
+.Mhome{
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    min-height: 100vh;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: slideshow2 10s ease-in-out infinite;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            color: white;
+            text-align: center;
+}
+@media (max-width: 770px) {
+    .Mhome{
+      display: flex;
+    }
+    .github-stats{
+        width: 350px;
+    }
+    .welcome{
+        color: white;
+    }
+    .intro{
+        color: aliceblue;
+    }
+    .name{
+        color: aliceblue;
+    }
+    .content__container__text{
+        color: aliceblue;
+        font-size: 20px;
+    }
+    .content__container__list{
+        color: aqua;
+        font-size: 20px;
+    }
+    .github-stats{
+        width: 300px;
+    }
+  }
+  
+  @media (min-width: 770px) {
+    .Mhome{
+        display: none;
+    }
+  }
