@@ -1,255 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Page</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+}
 
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            min-height: 100vh;
-        }
+.skill-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: white;
+    border: 2px solid #d1d1d1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.3s ease;
+}
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
+.skill-circle:hover {
+    background-color: #f3f3f3;
+    border-color: #808080;
+    transform: scale(1.05);
+}
 
-        .contact-wrapper {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
+.skill-circle img {
+    width: 40px;
+    height: 40px;
+    filter: grayscale(100%);
+    transition: transform 0.3s ease;
+}
 
-        .contact-form,
-        .qr-section {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-        }
+.skill-circle:hover img {
+    transform: scale(1.1);
+}
 
-        .contact-form {
-            flex: 1;
-        }
+.skill-name {
+    position: absolute;
+    bottom: -30px;
+    background-color: #333;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
 
-        .section-title {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: #333;
-        }
+.skill-circle:hover .skill-name {
+    opacity: 1;
+}
 
-        .section-subtitle {
-            color: #666;
-            margin-bottom: 2rem;
-            line-height: 1.5;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-input {
-            width: 100%;
-            padding: 1rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-
-        .form-input:focus {
-            outline: none;
-            border-color: #007bff;
-        }
-
-        textarea.form-input {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 1rem;
-            background: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .submit-btn:hover {
-            background: #0056b3;
-        }
-
-        .qr-section {
-            flex: 1;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .divider {
-            font-size: 1.2rem;
-            color: #666;
-            margin: 1rem 0;
-        }
-
-        .qr-placeholder {
-            width: 250px;
-            height: 250px;
-            margin: 2rem auto;
-            background: #f5f5f5;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .qr-placeholder img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .social-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-        .social-icon:hover {
-            transform: translateY(-3px);
-        }
-
-        .github {
-            background: #333;
-        }
-
-        .linkedin {
-            background: #0077b5;
-        }
-
-        /* Media Queries */
-        @media screen and (min-width: 768px) {
-            .contact-wrapper {
-                flex-direction: row;
-            }
-        }
-
-        @media screen and (max-width: 767px) {
-            .container {
-                padding: 1rem;
-            }
-
-            .contact-form,
-            .qr-section {
-                padding: 1.5rem;
-            }
-
-            .section-title {
-                font-size: 1.5rem;
-            }
-
-            .qr-placeholder {
-                width: 200px;
-                height: 200px;
-                margin: 1.5rem auto;
-            }
-        }
-
-        @media screen and (max-width: 480px) {
-            .qr-placeholder {
-                width: 180px;
-                height: 180px;
-            }
-
-            .social-icon {
-                width: 35px;
-                height: 35px;
-            }
-        }
-    </style>
+@media (max-width: 768px) {
+    .skill-circle {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .skill-circle img {
+        width: 30px;
+        height: 30px;
+    }
+}
+</style>
 </head>
 <body>
-    <div class="container">
-        <div class="contact-wrapper">
-            <!-- Contact Form Section -->
-            <div class="contact-form">
-                <h2 class="section-title">Contact Me</h2>
-                <p class="section-subtitle">Have any questions or want to get in touch? Send me a direct message, and I'll get back to you as soon as possible!</p>
-                
-                <form>
-                    <div class="form-group">
-                        <input 
-                            type="email" 
-                            class="form-input" 
-                            placeholder="Enter your email"
-                            required
-                        >
-                    </div>
-                    
-                    <div class="form-group">
-                        <textarea 
-                            class="form-input" 
-                            placeholder="Enter your message"
-                            required
-                        ></textarea>
-                    </div>
-                    
-                    <button type="submit" class="submit-btn">
-                        Send Message
-                    </button>
-                </form>
-            </div>
 
-            <!-- QR Code Section -->
-            <div class="qr-section">
-                <div>
-                    <h3 class="divider">- or -</h3>
-                    <h2 class="section-title">Let's Connect on WhatsApp</h2>
-                    
-                    <div class="qr-placeholder">
-                        <img src="path-to-your-qr-code.jpg" alt="WhatsApp QR Code">
-                    </div>
-                    
-                    <p class="section-subtitle">Scan to start a conversation</p>
-                </div>
-                
-                <div class="social-icons">
-                    <div class="social-icon github">
-                        <i class="fab fa-github"></i>
-                    </div>
-                    <div class="social-icon linkedin">
-                        <i class="fab fa-linkedin"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="skills-container">
+    <div class="skill-circle">
+        <img src="java-icon.png" alt="Java">
+        <span class="skill-name">Java</span>
     </div>
+    <div class="skill-circle">
+        <img src="python-icon.png" alt="Python">
+        <span class="skill-name">Python</span>
+    </div>
+    <div class="skill-circle">
+        <img src="mysql-icon.png" alt="MySQL">
+        <span class="skill-name">MySQL</span>
+    </div>
+    <div class="skill-circle">
+        <img src="spring-icon.png" alt="Spring">
+        <span class="skill-name">Spring</span>
+    </div>
+    <div class="skill-circle">
+        <img src="figma-icon.png" alt="Figma">
+        <span class="skill-name">Figma</span>
+    </div>
+    <div class="skill-circle">
+        <img src="typescript-icon.png" alt="TypeScript">
+        <span class="skill-name">TypeScript</span>
+    </div>
+</div>
+
 </body>
 </html>
