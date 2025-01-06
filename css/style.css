@@ -9,15 +9,6 @@
 html {
   font-size: 62.5%;
   scroll-behavior: smooth; }
-  @media only screen and (max-width: 75em) {
-    html {
-      font-size: 59%; } }
-  @media only screen and (max-width: 56.25em) {
-    html {
-      font-size: 56%; } }
-  @media only screen and (min-width: 112.5em) {
-    html {
-      font-size: 65%; } }
 
 body {
   box-sizing: border-box;
@@ -1480,11 +1471,22 @@ textarea.form-input {
   min-height: 150px;
   resize: vertical;
 }
+/* fade content */
+.fade-content {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+.fade-content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 .submit-btn {
   width: 100%;
   padding: 1rem;
-  background: #007bff;
+  background: #000000;
   color: white;
   border: none;
   border-radius: 5px;
@@ -1494,7 +1496,7 @@ textarea.form-input {
 }
 
 .submit-btn:hover {
-  background: #0056b3;
+  background: #2b2e32;
 }
 
 .qr-section {

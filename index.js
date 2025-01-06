@@ -102,3 +102,6 @@ const slides = document.querySelectorAll('.slide');
         currentProjectSlide = (currentProjectSlide + 1) % projectSlides.length;
         updateProjectGallery();
     }, 5000);
+
+    // fadein
+    
